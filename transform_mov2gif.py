@@ -1,6 +1,6 @@
 import argparse
 import ffmpeg
-# python convert_mov_to_gif.py /path/to/input.mov /path/to/output.gif
+# python transform_mov2gif.py /path/to/input.mov /path/to/output.gif
 def convert_mov_to_gif(input_path, output_path):
     try:
         # 使用 ffmpeg 将视频转换为 GIF

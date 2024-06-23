@@ -1,4 +1,4 @@
-# 作业三：NeRF-pytorch复现
+# NeRF-pytorch复现
 
 ## 前言
 本项目用于在自己的数据集上复现nerf的效果
@@ -12,9 +12,9 @@
 - 网络架构：
 网络架构分为两个8层的MLP网络，非常简单，首先第一个8层网络用于估计粒子的概率密度函数，输出到第二个8层网络后，第二个网络用来估计每个射线上粒子的RGB值。
 
-  <img src='./material//pipeline.jpg'/>
+  <img src='imgs/pipeline.jpg'/>
 
-- 后处理：
+- 后处理:
 将网络的输出再次进行体渲染，在对应的射线粒子位置上填充RGB值，最后输出。
 
 
@@ -100,52 +100,13 @@
   ```
 - 结果
   
-  以下是模型在运行到[50000](./logs/Doramon/prange_spiral_050000_rgb.mp4)、[100000](./logs/Doramon/prange_spiral_100000_rgb.mp4)、[150000](./logs/Doramon/prange_spiral_150000_rgb.mp4)、[200000](./logs/Doramon/prange_spiral_200000_rgb.mp4)代时的效果
+  以下是模型在运行到[50000](./material/Doramon_50000.gif)、[100000](./material/Doramon_100000.gif)、[150000](./material/Doramon_150000.gif)、[200000](./material/Doramon_200000.gif)代时的效果
 
-<style>
-  .video-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .video-item {
-    flex: 1 1 22%; /* 每个视频占据 22% 的宽度，剩下的用于间距 */
-    margin: 5px;
-    text-align: center; /* 居中文本 */
-  }
-  .video-item video {
-    width: 100%;
-    height: auto; /* 保持视频的纵横比 */
-  }
-</style>
-
-<div class="video-container">
-  <div class="video-item">
-    <video controls>
-      <source src="./logs/Doramon/prange_spiral_050000_rgb.mp4" type="video/mp4">
-      您的浏览器不支持 HTML5 视频标签。
-    </video>
-    <p>第50000代</p>
-  </div>
-  <div class="video-item">
-    <video controls>
-      <source src="./logs/Doramon/prange_spiral_150000_rgb.mp4" type="video/mp4">
-      您的浏览器不支持 HTML5 视频标签。
-    </video>
-    <p>第100000代</p>
-  </div>
-  <div class="video-item">
-    <video controls>
-      <source src="./logs/Doramon/prange_spiral_100000_rgb.mp4" type="video/mp4">
-      您的浏览器不支持 HTML5 视频标签。
-    </video>
-    <p>第150000代</p>
-  </div>
-  <div class="video-item">
-    <video controls>
-      <source src="./logs/Doramon/prange_spiral_200000_rgb.mp4" type="video/mp4">
-      您的浏览器不支持 HTML5 视频标签。
-    </video>
-    <p>第200000代</p>
-  </div>
-</div>
+  <table>
+    <tr>
+      <td><img src="./material/Doramon_50000.gif" alt="Image 1" width="150" /></td>
+      <td><img src="./material/Doramon_100000.gif" alt="Image 2" width="150" /></td>
+      <td><img src="./material/Doramon_150000.gif" alt="Image 3" width="150" /></td>
+      <td><img src="./material/Doramon_200000.gif" alt="Image 3" width="150" /></td>
+    </tr>
+  </table>
